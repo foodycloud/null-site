@@ -6,39 +6,36 @@ export default function Token() {
   return (
     <section
       id="token"
-      className="py-20 px-6 border-t border-[#282828] max-w-5xl mx-auto w-full"
+      className="py-24 sm:py-32 px-6 border-t border-[#222222] max-w-5xl mx-auto w-full"
       aria-labelledby="token-heading"
     >
-      {/* Index Label */}
-      <div className="font-mono-tech text-[11px] text-[#858580] uppercase tracking-wider mb-8">
+      <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-wider mb-12">
         {token.index} / {token.label}
       </div>
 
-      <div className="mb-8">
+      <div className="mb-10">
         <h2
           id="token-heading"
-          className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F1F1ED] mb-2"
+          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F1F1ED]"
         >
           {token.headline}
         </h2>
       </div>
 
-      {/* Simple Mono Grid with Thin Dividers */}
-      <div className="border-t border-[#282828] mb-8 font-mono-tech">
+      {/* Technical Documentation Table */}
+      <div className="border-t border-[#222222] mb-8 font-mono-tech">
         {token.specs.map((item) => (
           <div
             key={item.key}
-            className="py-3.5 border-b border-[#282828] flex items-center justify-between text-xs sm:text-sm"
+            className="py-4 border-b border-[#222222] flex items-center justify-between text-xs sm:text-sm"
           >
-            <span className="text-[#858580] tracking-wider">{item.key}</span>
-            <span className={`font-semibold ${item.isTBA ? "text-[#858580]" : "text-[#F1F1ED]"}`}>
-              {item.value}
-            </span>
+            <span className="text-[#858580] uppercase tracking-wider">{item.key}</span>
+            <span className="text-[#F1F1ED] font-medium">{item.value}</span>
           </div>
         ))}
       </div>
 
-      {/* One-line Risk Note */}
+      {/* Risk Note */}
       <p className="font-mono-tech text-xs text-[#858580] leading-relaxed">
         * {token.riskNote}
       </p>

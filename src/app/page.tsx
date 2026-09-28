@@ -6,6 +6,7 @@ import WhyNull from "@/components/WhyNull";
 import Community from "@/components/Community";
 import Token from "@/components/Token";
 import Transparency from "@/components/Transparency";
+import Mechanics from "@/components/Mechanics";
 import TheInternet from "@/components/TheInternet";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -29,6 +30,7 @@ export default function Home() {
         <Community />
         <Token />
         <Transparency />
+        <Mechanics />
         <TheInternet />
         <FAQ />
         <FinalCTA />

@@ -1,10 +1,7 @@
 /**
  * =========================================================================
- * NULL SITE CONFIGURATION — EDITORIAL & RESTRAINED
+ * NULL SITE CONFIGURATION — FINAL BRAND REFINEMENT
  * =========================================================================
- * 
- * Strict honesty: items not yet deployed are marked as "TBA" and rendered
- * as plain text without dead links.
  */
 
 export const siteConfig = {
@@ -13,119 +10,157 @@ export const siteConfig = {
     symbol: "NULL / Ø",
     tagline: "NOTHING. UNTIL EVERYTHING.",
     meta: "MEMECOIN / INTERNET CULTURE / 2026",
-    status: "STATUS / PRE-GENESIS",
+    status: "NULL / STATUS: PRE-GENESIS",
     year: "2026",
     domain: "https://null.wtf",
   },
 
-  // Official Channels (Replace placeholders with verified handles before launch)
+  // Official Channels
   socials: {
     x: {
       name: "X",
       handle: "@nullcoin",
       url: "https://x.com/nullcoin",
-      isLive: true,
     },
     telegram: {
-      name: "Telegram",
+      name: "TELEGRAM",
       handle: "t.me/nullcoin",
       url: "https://t.me/nullcoin",
-      isLive: true,
+    },
+    discord: {
+      name: "DISCORD",
+      handle: "discord.gg/null",
+      url: "https://discord.gg/null",
     },
     contract: {
-      name: "Contract",
+      name: "CONTRACT",
       spec: "TBA",
-      isLive: false,
     },
   },
 
   // 1. Hero
   hero: {
+    brandName: "NULL",
+    status: "NULL / STATUS: PRE-GENESIS",
     meta: "MEMECOIN / INTERNET CULTURE / 2026",
-    status: "STATUS / PRE-GENESIS",
     headlinePart1: "NOTHING.",
     headlinePart2: "UNTIL EVERYTHING.",
-    support: "A memecoin built around a simple idea: nothing becomes something when enough people participate.",
-    primaryCta: "ENTER NULL",
-    secondaryCta: "MANIFESTO",
+    support: "A memecoin built around a simple idea:\nnothing becomes something when enough people participate.",
+    primaryCta: "ENTER NULL →",
+    secondaryCta: "READ MANIFESTO",
   },
 
-  // 2. The Idea
+  // 2. The Premise
   premise: {
     index: "01",
-    label: "THE PREMISE",
+    label: "PREMISE",
     headline: "THERE IS NOTHING HERE.",
-    body: "No artificial utility. No manufactured promises. No complicated narrative. NULL is a memecoin. That's the point.",
+    lines: [
+      "No artificial utility.",
+      "No manufactured promises.",
+      "No complicated narrative.",
+      "NULL is a memecoin.",
+      "That's the point.",
+    ],
+    question: "What does nothing become when enough people give it meaning?",
   },
 
   // 3. The Manifesto
   manifesto: {
     index: "02",
-    label: "THE MANIFESTO",
+    label: "MANIFESTO",
     axioms: [
-      "Nothing is guaranteed.",
-      "Nothing is hidden.",
-      "Nothing is complicated.",
-      "Nothing belongs to one person.",
-      "Nothing becomes something alone.",
+      "NOTHING IS GUARANTEED.",
+      "NOTHING IS PROMISED.",
+      "NOTHING IS HIDDEN.",
+      "NOTHING IS COMPLICATED.",
+      "NOTHING BELONGS TO ONE PERSON.",
+      "NOTHING BECOMES SOMETHING ALONE.",
     ],
     conclusion: "NULL IS NOTHING.",
   },
 
-  // 4. Why NULL
+  // 4. Why NULL?
   thesis: {
     index: "03",
-    label: "THE THESIS",
+    label: "THESIS",
     headline: "WHY NULL?",
-    body: "Crypto keeps searching for utility. Memes never needed permission. NULL exists somewhere in between. A symbol first. A community second. A market third.",
+    lines: [
+      "Crypto keeps searching for utility.",
+      "Memes never needed permission.",
+      "NULL sits somewhere in between.",
+      "A symbol first.",
+      "A community second.",
+      "A market third.",
+      "Everything else is noise.",
+    ],
   },
 
   // 5. Nullers (Community)
   community: {
     index: "04",
-    label: "THE COMMUNITY",
-    headline: "NULLERS",
-    body: "A symbol means nothing by itself. A community gives it meaning. If you're here, you're already a NULLER.",
+    label: "COMMUNITY",
+    headline: "NOTHING WITHOUT SOMEONE.",
+    lines: [
+      "A symbol means nothing by itself.",
+      "A community gives it meaning.",
+      "If you're here, you're already a NULLER.",
+    ],
+    name: "NULLERS",
   },
 
-  // 6. The Token
+  // 6. Token Specifications
   token: {
     index: "05",
-    label: "THE TOKEN",
+    label: "TOKEN",
     headline: "SPECIFICATIONS",
     specs: [
-      { key: "TOKEN", value: "NULL", isTBA: false },
-      { key: "CHAIN", value: "TBA", isTBA: true },
-      { key: "CONTRACT", value: "TBA", isTBA: true },
-      { key: "SUPPLY", value: "TBA", isTBA: true },
-      { key: "LIQUIDITY", value: "TBA", isTBA: true },
-      { key: "TAX", value: "TBA", isTBA: true },
+      { key: "TOKEN", value: "NULL" },
+      { key: "SYMBOL", value: "NULL / Ø" },
+      { key: "CHAIN", value: "TBA" },
+      { key: "CONTRACT", value: "TBA" },
+      { key: "TOTAL SUPPLY", value: "TBA" },
+      { key: "LIQUIDITY", value: "TBA" },
+      { key: "TEAM ALLOCATION", value: "TBA" },
+      { key: "BUY / SELL TAX", value: "TBA" },
+      { key: "LAUNCH", value: "TBA" },
     ],
     riskNote: "NULL is a speculative memecoin with no intrinsic value. Participate at your own risk.",
   },
 
-  // 7. Nothing Hidden (Ledger)
+  // 7. Transparency (Nothing Hidden)
   transparency: {
     index: "06",
-    label: "NOTHING HIDDEN",
-    headline: "TRANSPARENCY LEDGER",
+    label: "TRANSPARENCY",
+    headline: "NOTHING HIDDEN.",
     items: [
       { name: "Contract", status: "TBA" },
       { name: "Liquidity", status: "TBA" },
-      { name: "Supply", status: "TBA" },
-      { name: "Team Allocation", status: "TBA" },
+      { name: "Team allocation", status: "TBA" },
       { name: "Treasury", status: "TBA" },
       { name: "Ownership", status: "TBA" },
       { name: "Vesting", status: "TBA" },
     ],
+    statement: "When the token exists, the relevant information will be published and verifiable on-chain.",
   },
 
-  // 8. The Internet
-  theInternet: {
+  // 8. Mechanics
+  mechanics: {
     index: "07",
+    label: "MECHANICS",
+    steps: [
+      "FIND NULL",
+      "BECOME A NULLER",
+      "MAKE SOMETHING FROM NOTHING",
+    ],
+  },
+
+  // 9. The Internet
+  theInternet: {
+    index: "08",
     label: "THE INTERNET",
     headline: "NULL BELONGS TO THE INTERNET.",
-    axioms: [
+    lines: [
       "Memes travel faster than narratives.",
       "Ideas don't need permission.",
       "Communities don't need instructions.",
@@ -133,44 +168,45 @@ export const siteConfig = {
     ],
   },
 
-  // 9. FAQ
+  // 10. FAQ
   faq: {
-    index: "08",
+    index: "09",
     label: "FAQ",
-    headline: "FREQUENTLY ANSWERED",
+    headline: "FAQ",
     questions: [
       {
         q: "What is NULL?",
-        a: "An internet-native memecoin built around the premise that collective participation creates cultural meaning from nothing.",
+        a: "NULL is an internet-native memecoin.",
       },
       {
         q: "Does NULL have utility?",
-        a: "No artificial utility. NULL does not pretend to be a technology platform or payment system. It is a memecoin.",
+        a: "No artificial utility is promised.",
       },
       {
         q: "Who created NULL?",
-        a: "TBA.",
+        a: "Disclosed at launch.",
       },
       {
         q: "Where can I buy NULL?",
-        a: "Not yet. Official contract and liquidity parameters will be published directly on this domain at launch.",
+        a: "Not yet. Available after launch.",
       },
       {
         q: "What are the risks?",
-        a: "NULL is a speculative cultural memecoin. Its value is entirely subjective and market-driven. Never put in capital you cannot afford to lose.",
+        a: "NULL is a speculative cultural memecoin. Its value is determined entirely by the open market.",
       },
     ],
   },
 
-  // 10. Final Call & Footer
+  // 11. Final Call
   finalCta: {
     headlinePart1: "NOTHING.",
     headlinePart2: "UNTIL EVERYTHING.",
     buttonText: "ENTER NULL →",
   },
 
+  // 12. Footer
   footer: {
     disclaimer: "NULL is a memecoin. Nothing on this website constitutes financial advice or a promise of future value.",
-    copyright: "© 2026 NULL.",
+    copyright: "2026 NULL",
   },
 };

@@ -6,59 +6,57 @@ export default function Community() {
   return (
     <section
       id="community"
-      className="py-20 px-6 border-t border-[#282828] max-w-5xl mx-auto w-full"
+      className="py-24 sm:py-32 px-6 border-t border-[#222222] max-w-5xl mx-auto w-full"
       aria-labelledby="community-heading"
     >
-      {/* Index Label */}
-      <div className="font-mono-tech text-[11px] text-[#858580] uppercase tracking-wider mb-8">
+      <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-wider mb-12">
         {community.index} / {community.label}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start mb-12">
-        <div className="md:col-span-4">
-          <h2
-            id="community-heading"
-            className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F1F1ED]"
-          >
-            {community.headline}
-          </h2>
-        </div>
+      <div className="max-w-3xl space-y-8 mb-16">
+        <h2
+          id="community-heading"
+          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F1F1ED]"
+        >
+          {community.headline}
+        </h2>
 
-        <div className="md:col-span-8">
-          <p className="text-base sm:text-lg text-[#858580] leading-relaxed">
-            {community.body}
-          </p>
+        <div className="space-y-3 text-lg sm:text-xl text-[#858580] leading-relaxed">
+          {community.lines.map((line, idx) => (
+            <p key={idx} className={idx === 2 ? "text-[#F1F1ED] font-medium" : ""}>
+              {line}
+            </p>
+          ))}
         </div>
       </div>
 
-      {/* Technical Channels List */}
-      <div className="border-t border-[#282828] grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+      {/* Clean Socials Row */}
+      <div className="border-t border-[#222222] pt-8 flex flex-wrap items-center gap-6 font-mono-tech text-xs uppercase tracking-wider">
         <a
           href={socials.x.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-4 border border-[#282828] flex items-center justify-between hover:border-[#F1F1ED] transition-colors group"
+          className="hover:text-[#858580] transition-colors"
         >
-          <span className="font-mono-tech text-xs text-[#F1F1ED] group-hover:underline">
-            X / {socials.x.handle}
-          </span>
-          <span className="font-mono-tech text-[11px] text-[#858580]">
-            [FOLLOW]
-          </span>
+          {socials.x.name} ↗
         </a>
-
+        <span className="text-[#222222]">/</span>
         <a
           href={socials.telegram.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-4 border border-[#282828] flex items-center justify-between hover:border-[#F1F1ED] transition-colors group"
+          className="hover:text-[#858580] transition-colors"
         >
-          <span className="font-mono-tech text-xs text-[#F1F1ED] group-hover:underline">
-            TELEGRAM / {socials.telegram.handle}
-          </span>
-          <span className="font-mono-tech text-[11px] text-[#858580]">
-            [JOIN]
-          </span>
+          {socials.telegram.name} ↗
+        </a>
+        <span className="text-[#222222]">/</span>
+        <a
+          href={socials.discord.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[#858580] transition-colors"
+        >
+          {socials.discord.name} ↗
         </a>
       </div>
     </section>

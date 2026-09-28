@@ -6,28 +6,32 @@ export default function TheIdea() {
   return (
     <section
       id="premise"
-      className="py-20 px-6 border-t border-[#282828] max-w-5xl mx-auto w-full"
+      className="py-24 sm:py-32 px-6 border-t border-[#222222] max-w-5xl mx-auto w-full"
       aria-labelledby="premise-heading"
     >
-      {/* Index Label */}
-      <div className="font-mono-tech text-[11px] text-[#858580] uppercase tracking-wider mb-8">
+      <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-wider mb-12">
         {premise.index} / {premise.label}
       </div>
 
-      {/* Main Content Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-        <div className="md:col-span-5">
-          <h2
-            id="premise-heading"
-            className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F1F1ED] leading-snug"
-          >
-            {premise.headline}
-          </h2>
+      <div className="max-w-3xl space-y-10">
+        <h2
+          id="premise-heading"
+          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F1F1ED]"
+        >
+          {premise.headline}
+        </h2>
+
+        <div className="space-y-3 text-lg sm:text-xl text-[#858580] leading-relaxed font-normal">
+          {premise.lines.map((line, idx) => (
+            <p key={idx} className={idx >= 3 ? "text-[#F1F1ED] font-medium" : ""}>
+              {line}
+            </p>
+          ))}
         </div>
 
-        <div className="md:col-span-7">
-          <p className="text-base sm:text-lg text-[#858580] leading-relaxed font-normal">
-            {premise.body}
+        <div className="pt-6 border-t border-[#222222]">
+          <p className="text-base sm:text-lg text-[#858580] italic">
+            &ldquo;{premise.question}&rdquo;
           </p>
         </div>
       </div>

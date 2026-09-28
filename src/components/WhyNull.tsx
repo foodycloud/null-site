@@ -6,28 +6,36 @@ export default function WhyNull() {
   return (
     <section
       id="thesis"
-      className="py-20 px-6 border-t border-[#282828] max-w-5xl mx-auto w-full"
+      className="py-24 sm:py-32 px-6 border-t border-[#222222] max-w-5xl mx-auto w-full"
       aria-labelledby="thesis-heading"
     >
-      {/* Index Label */}
-      <div className="font-mono-tech text-[11px] text-[#858580] uppercase tracking-wider mb-8">
+      <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-wider mb-12">
         {thesis.index} / {thesis.label}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-        <div className="md:col-span-4">
-          <h2
-            id="thesis-heading"
-            className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F1F1ED]"
-          >
-            {thesis.headline}
-          </h2>
-        </div>
+      <div className="max-w-3xl space-y-8">
+        <h2
+          id="thesis-heading"
+          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F1F1ED]"
+        >
+          {thesis.headline}
+        </h2>
 
-        <div className="md:col-span-8">
-          <p className="text-lg sm:text-xl text-[#F1F1ED] font-medium leading-relaxed mb-6">
-            {thesis.body}
-          </p>
+        <div className="space-y-4 text-xl sm:text-2xl text-[#858580] font-normal leading-relaxed">
+          {thesis.lines.map((line, idx) => (
+            <p
+              key={idx}
+              className={
+                idx >= 3 && idx <= 5
+                  ? "text-[#F1F1ED] font-semibold"
+                  : idx === 6
+                  ? "text-[#858580] text-lg sm:text-xl pt-2 italic"
+                  : ""
+              }
+            >
+              {line}
+            </p>
+          ))}
         </div>
       </div>
     </section>

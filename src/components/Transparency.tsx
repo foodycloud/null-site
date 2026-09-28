@@ -5,36 +5,39 @@ export default function Transparency() {
 
   return (
     <section
-      id="ledger"
-      className="py-20 px-6 border-t border-[#282828] max-w-5xl mx-auto w-full"
-      aria-labelledby="ledger-heading"
+      id="transparency"
+      className="py-24 sm:py-32 px-6 border-t border-[#222222] max-w-5xl mx-auto w-full"
+      aria-labelledby="transparency-heading"
     >
-      {/* Index Label */}
-      <div className="font-mono-tech text-[11px] text-[#858580] uppercase tracking-wider mb-8">
+      <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-wider mb-12">
         {transparency.index} / {transparency.label}
       </div>
 
-      <div className="mb-8">
+      <div className="mb-10">
         <h2
-          id="ledger-heading"
-          className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F1F1ED] mb-2"
+          id="transparency-heading"
+          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F1F1ED]"
         >
           {transparency.headline}
         </h2>
       </div>
 
       {/* Verification List */}
-      <div className="border-t border-[#282828] font-mono-tech">
+      <div className="border-t border-[#222222] mb-8 font-mono-tech">
         {transparency.items.map((item) => (
           <div
             key={item.name}
-            className="py-3.5 border-b border-[#282828] flex items-center justify-between text-xs sm:text-sm"
+            className="py-4 border-b border-[#222222] flex items-center justify-between text-xs sm:text-sm"
           >
             <span className="text-[#F1F1ED]">{item.name}</span>
             <span className="text-[#858580]">{item.status}</span>
           </div>
         ))}
       </div>
+
+      <p className="font-mono-tech text-xs text-[#858580] leading-relaxed">
+        {transparency.statement}
+      </p>
     </section>
   );
 }

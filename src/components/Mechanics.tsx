@@ -1,25 +1,25 @@
 import { siteConfig } from "@/config/siteConfig";
 
-export default function Manifesto() {
-  const { manifesto } = siteConfig;
+export default function Mechanics() {
+  const { mechanics } = siteConfig;
 
   return (
     <section
-      id="manifesto"
+      id="mechanics"
       className="py-24 sm:py-32 px-6 border-t border-[#222222] max-w-5xl mx-auto w-full"
-      aria-labelledby="manifesto-heading"
+      aria-labelledby="mechanics-heading"
     >
       <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-wider mb-12">
-        {manifesto.index} / {manifesto.label}
+        {mechanics.index} / {mechanics.label}
       </div>
 
-      <h2 id="manifesto-heading" className="sr-only">
-        {manifesto.label}
+      <h2 id="mechanics-heading" className="sr-only">
+        {mechanics.label}
       </h2>
 
-      {/* 6 Axioms List */}
-      <div className="border-t border-[#222222] mb-16">
-        {manifesto.axioms.map((axiom, idx) => (
+      {/* 3 Numbered Statements */}
+      <div className="border-t border-[#222222]">
+        {mechanics.steps.map((step, idx) => (
           <div
             key={idx}
             className="py-6 border-b border-[#222222] flex items-baseline gap-6 sm:gap-12"
@@ -28,17 +28,10 @@ export default function Manifesto() {
               0{idx + 1}
             </span>
             <span className="text-lg sm:text-2xl font-bold tracking-tight text-[#F1F1ED]">
-              {axiom}
+              {step}
             </span>
           </div>
         ))}
-      </div>
-
-      {/* Conclusion */}
-      <div className="pt-2">
-        <div className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#F1F1ED]">
-          {manifesto.conclusion}
-        </div>
       </div>
     </section>
   );
