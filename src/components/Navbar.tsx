@@ -46,10 +46,15 @@ export default function Navbar() {
           {/* Logo & Meta */}
           <Link
             href="/"
-            className="flex items-baseline gap-3 text-[#F1F1ED] focus-visible:outline focus-visible:outline-1 focus-visible:outline-[#F1F1ED]"
+            className="flex items-center gap-2.5 text-[#F1F1ED] focus-visible:outline focus-visible:outline-1 focus-visible:outline-[#F1F1ED] group"
             aria-label={`${brand.name} Homepage`}
           >
-            <span className="font-mono-tech text-sm font-bold tracking-[0.2em] text-[#F1F1ED]">
+            <img
+              src="/brand-icon.jpg"
+              alt="NULL Icon"
+              className="w-5 h-5 border border-[#282828] object-cover"
+            />
+            <span className="font-mono-tech text-sm font-bold tracking-[0.2em] text-[#F1F1ED] group-hover:text-[#858580] transition-colors">
               {brand.name}
             </span>
           </Link>

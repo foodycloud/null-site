@@ -20,8 +20,15 @@ export default function Hero() {
 
       {/* Main Editorial Hero */}
       <div className="my-auto py-20 sm:py-28">
-        <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-widest mb-6">
-          {hero.brandName}
+        <div className="flex items-center gap-3 mb-8">
+          <img
+            src="/brand-icon.jpg"
+            alt="NULL Emblem"
+            className="w-8 h-8 border border-[#282828] object-cover"
+          />
+          <span className="font-mono-tech text-xs text-[#858580] uppercase tracking-widest">
+            {hero.brandName}
+          </span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.04] text-[#F1F1ED] mb-8 select-none max-w-4xl">

@@ -7,9 +7,16 @@ export default function Footer() {
     <footer className="border-t border-[#222222] bg-[#0A0A0A] py-16 px-6">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 font-mono-tech text-xs text-[#858580]">
         {/* Brand & Tagline */}
-        <div className="space-y-1">
-          <div className="text-sm font-bold text-[#F1F1ED] tracking-wider">
-            {brand.symbol}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/brand-icon.jpg"
+              alt="NULL"
+              className="w-5 h-5 border border-[#282828] object-cover"
+            />
+            <span className="text-sm font-bold text-[#F1F1ED] tracking-wider">
+              {brand.symbol}
+            </span>
           </div>
           <div>{brand.tagline}</div>
         </div>
