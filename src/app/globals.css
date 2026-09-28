@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0A0D14;
+  --bg-surface: #111624;
+  --bg-surface-elevated: #171E30;
+  --bg-surface-hover: #202940;
+  --fg: #FFFFFF;
+  --fg-body: #CBD2E6;
+  --fg-muted: #98A2C2;
+  --fg-subtle: #677294;
+  --border: #22293D;
+  --border-highlight: #3A4568;
+  --accent: #D4FF00;
+  --accent-glow: rgba(212, 255, 0, 0.28);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.012em;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0A0D14;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0D14;
+}
+::-webkit-scrollbar-thumb {
+  background: #252C42;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3A4568;
+}
+
+/* Typography styles */
+.font-mono-tech {
+  font-family: var(--font-mono), "IBM Plex Mono", Menlo, monospace;
+}
+
+/* Luminous High-Contrast Glow Card */
+.glow-card {
+  background: linear-gradient(180deg, rgba(20, 26, 42, 0.85) 0%, rgba(13, 17, 28, 0.85) 100%);
+  border: 1px solid rgba(46, 56, 86, 0.65);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+.glow-card:hover {
+  border-color: rgba(66, 82, 124, 0.9);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.65), 0 0 20px -2px rgba(212, 255, 0, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Marquee Keyframes */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Luminous Launch Button Glow */
+.btn-launch {
+  background: #D4FF00;
+  color: #0A0D14;
+  font-weight: 750;
+  box-shadow: 0 0 24px rgba(212, 255, 0, 0.38);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-launch:hover {
+  background: #E2FF4D;
+  box-shadow: 0 0 36px rgba(212, 255, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
