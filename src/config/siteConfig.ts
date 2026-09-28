@@ -19,13 +19,13 @@ export const siteConfig = {
   socials: {
     x: {
       name: "X",
-      handle: "@nullcoin",
-      url: "https://x.com/nullcoin",
+      handle: "@null_culture",
+      url: "https://x.com/null_culture",
     },
     telegram: {
       name: "TELEGRAM",
-      handle: "t.me/nullcoin",
-      url: "https://t.me/nullcoin",
+      handle: "t.me/null_culture",
+      url: "https://t.me/null_culture",
     },
     discord: {
       name: "DISCORD",

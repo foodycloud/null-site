@@ -46,6 +46,7 @@ export const metadata: Metadata = {
     description:
       "A memecoin built around a simple idea: nothing becomes something when enough people participate.",
     images: ["/og-image.svg"],
+    creator: "@null_culture",
   },
   robots: {
     index: true,
