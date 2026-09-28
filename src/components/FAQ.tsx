@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/siteConfig";
 
 export default function FAQ() {
@@ -15,74 +14,57 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 md:py-28 px-6 sm:px-10 border-t border-[#22293D] max-w-4xl mx-auto w-full relative z-10"
+      className="py-20 px-6 border-t border-[#282828] max-w-5xl mx-auto w-full"
       aria-labelledby="faq-heading"
     >
-      {/* Chapter Label */}
-      <div className="flex items-center justify-center gap-3 mb-8 text-[11px] font-mono-tech tracking-[0.2em] text-[#98A2C2] uppercase text-center">
-        <span className="text-[#D4FF00] font-bold">{faq.chapter}</span>
-        <span className="text-[#3A4568]">/</span>
-        <span className="text-[#CBD2E6]">Frequently Answered</span>
+      {/* Index Label */}
+      <div className="font-mono-tech text-[11px] text-[#858580] uppercase tracking-wider mb-8">
+        {faq.index} / {faq.label}
       </div>
 
-      {/* Main Headline */}
-      <div className="text-center mb-10 max-w-2xl mx-auto">
+      <div className="mb-8">
         <h2
           id="faq-heading"
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#FFFFFF] mb-2"
+          className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F1F1ED]"
         >
-          {faq.title}
+          {faq.headline}
         </h2>
-        <p className="text-sm sm:text-base text-[#CBD2E6]">
-          {faq.subtitle}
-        </p>
       </div>
 
-      {/* Accordion List - High-Contrast & Crisp */}
-      <div className="divide-y divide-[#22293D] border-y border-[#22293D] bg-[#101420]/90 rounded-xl overflow-hidden border border-[#22293D] shadow-md">
+      {/* Clean Accordion List */}
+      <div className="border-t border-[#282828]">
         {faq.questions.map((item, idx) => {
           const isOpen = openIdx === idx;
           return (
-            <div key={idx} className="transition-colors">
+            <div key={idx} className="border-b border-[#282828]">
               <button
                 onClick={() => toggle(idx)}
-                className="w-full px-6 py-4 sm:py-5 text-left flex items-start justify-between gap-4 cursor-pointer group hover:bg-[#161D2E]"
+                className="w-full py-4 text-left flex items-start justify-between gap-4 cursor-pointer group focus-visible:outline focus-visible:outline-1 focus-visible:outline-[#F1F1ED]"
                 aria-expanded={isOpen}
               >
-                <div className="flex items-baseline gap-4 sm:gap-6">
-                  <span className="text-xs sm:text-sm font-mono-tech text-[#D4FF00] font-bold">
-                    {idx < 9 ? `0${idx + 1}` : idx + 1}
+                <div className="flex items-baseline gap-6">
+                  <span className="font-mono-tech text-xs text-[#858580]">
+                    0{idx + 1}
                   </span>
-                  <span className="text-sm sm:text-base font-semibold text-[#FFFFFF] group-hover:text-[#D4FF00] transition-colors leading-snug">
+                  <span className="text-base font-semibold text-[#F1F1ED] group-hover:text-[#858580] transition-colors leading-snug">
                     {item.q}
                   </span>
                 </div>
 
-                <span className="text-[11px] font-mono-tech text-[#CBD2E6] group-hover:text-[#D4FF00] transition-colors shrink-0 pt-0.5 font-semibold">
-                  {isOpen ? "[ Close ]" : "[ Read ]"}
+                <span className="font-mono-tech text-xs text-[#858580] shrink-0 pt-0.5">
+                  {isOpen ? "[-]" : "[+]"}
                 </span>
               </button>
 
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-5 pt-1 pl-12 sm:pl-16 text-xs sm:text-sm text-[#CBD2E6] leading-relaxed max-w-2xl border-t border-[#1C2436]">
-                      {item.a}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {isOpen && (
+                <div className="pb-5 pl-10 sm:pl-12 text-sm text-[#858580] leading-relaxed max-w-2xl">
+                  {item.a}
+                </div>
+              )}
             </div>
           );
         })}
       </div>
-
     </section>
   );
 }

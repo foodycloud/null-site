@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { siteConfig } from "@/config/siteConfig";
 
 export default function TheInternet() {
@@ -9,50 +6,39 @@ export default function TheInternet() {
   return (
     <section
       id="internet"
-      className="py-20 md:py-28 px-6 sm:px-10 border-t border-[#22293D] max-w-5xl mx-auto w-full relative z-10"
+      className="py-20 px-6 border-t border-[#282828] max-w-5xl mx-auto w-full"
       aria-labelledby="internet-heading"
     >
-      {/* Chapter Label */}
-      <div className="flex items-center justify-center gap-3 mb-8 text-[11px] font-mono-tech tracking-[0.2em] text-[#98A2C2] uppercase text-center">
-        <span className="text-[#D4FF00] font-bold">{theInternet.chapter}</span>
-        <span className="text-[#3A4568]">/</span>
-        <span className="text-[#CBD2E6]">The Internet</span>
+      {/* Index Label */}
+      <div className="font-mono-tech text-[11px] text-[#858580] uppercase tracking-wider mb-8">
+        {theInternet.index} / {theInternet.label}
       </div>
 
-      {/* Main Headline */}
-      <div className="text-center mb-12 max-w-2xl mx-auto">
+      <div className="mb-10">
         <h2
           id="internet-heading"
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#FFFFFF] leading-snug mb-2"
+          className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#F1F1ED]"
         >
-          {theInternet.title}
+          {theInternet.headline}
         </h2>
-        <p className="text-sm sm:text-base text-[#CBD2E6]">
-          {theInternet.subtitle}
-        </p>
       </div>
 
-      {/* 2x2 Axioms Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {theInternet.axioms.map((ax, idx) => (
-          <motion.div
+      {/* Axioms List */}
+      <div className="border-t border-[#282828]">
+        {theInternet.axioms.map((axiom, idx) => (
+          <div
             key={idx}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: idx * 0.05 }}
-            className="p-6 sm:p-7 rounded-xl glow-card"
+            className="py-4 border-b border-[#282828] flex items-baseline gap-6"
           >
-            <span className="text-xs sm:text-sm font-mono-tech text-[#D4FF00] block mb-2 font-bold">
+            <span className="font-mono-tech text-xs text-[#858580]">
               0{idx + 1}
             </span>
-            <p className="text-base sm:text-lg font-semibold text-[#FFFFFF] leading-snug">
-              &ldquo;{ax}&rdquo;
+            <p className="text-base sm:text-lg text-[#F1F1ED] font-medium leading-snug">
+              &ldquo;{axiom}&rdquo;
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
-
     </section>
   );
 }
