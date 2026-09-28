@@ -1,4 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ShieldAlert, Zap, Layers, Sparkles } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
+
+const icons = [ShieldAlert, Zap, Layers, Sparkles];
 
 export default function TheIdea() {
   const { premise } = siteConfig;
@@ -6,34 +12,68 @@ export default function TheIdea() {
   return (
     <section
       id="premise"
-      className="py-24 sm:py-32 px-6 border-t border-[#222222] max-w-5xl mx-auto w-full"
+      className="py-20 md:py-28 px-6 sm:px-10 border-t border-[#22293D] max-w-5xl mx-auto w-full relative z-10"
       aria-labelledby="premise-heading"
     >
-      <div className="font-mono-tech text-xs text-[#858580] uppercase tracking-wider mb-12">
-        {premise.index} / {premise.label}
+      {/* Chapter Label */}
+      <div className="flex items-center justify-center gap-3 mb-8 text-[11px] font-mono-tech tracking-[0.2em] text-[#98A2C2] uppercase text-center">
+        <span className="text-[#D4FF00] font-bold">{premise.chapter}</span>
+        <span className="text-[#3A4568]">/</span>
+        <span className="text-[#CBD2E6]">The Premise</span>
       </div>
 
-      <div className="max-w-3xl space-y-10">
-        <h2
+      {/* Main Headline */}
+      <div className="text-center mb-12 max-w-2xl mx-auto">
+        <motion.h2
           id="premise-heading"
-          className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F1F1ED]"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#FFFFFF] leading-snug mb-3"
         >
-          {premise.headline}
-        </h2>
+          {premise.title}
+        </motion.h2>
+        <p className="text-sm sm:text-base text-[#CBD2E6] leading-relaxed">
+          {premise.subtitle}
+        </p>
+      </div>
 
-        <div className="space-y-3 text-lg sm:text-xl text-[#858580] leading-relaxed font-normal">
-          {premise.lines.map((line, idx) => (
-            <p key={idx} className={idx >= 3 ? "text-[#F1F1ED] font-medium" : ""}>
-              {line}
-            </p>
-          ))}
-        </div>
+      {/* 4 Luminous Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        {premise.pillars.map((p, idx) => {
+          const Icon = icons[idx % icons.length];
+          return (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.06 }}
+              className="p-6 rounded-xl glow-card transition-all"
+            >
+              <div className="w-9 h-9 rounded-lg bg-[#141A28] border border-[#2B354F] flex items-center justify-center text-[#D4FF00] mb-4 shadow-sm">
+                <Icon size={17} />
+              </div>
+              <h3 className="text-base font-bold text-[#FFFFFF] mb-2 tracking-tight">
+                {p.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#CBD2E6] leading-relaxed">
+                {p.desc}
+              </p>
+            </motion.div>
+          );
+        })}
+      </div>
 
-        <div className="pt-6 border-t border-[#222222]">
-          <p className="text-base sm:text-lg text-[#858580] italic">
-            &ldquo;{premise.question}&rdquo;
-          </p>
-        </div>
+      {/* Thesis Quote Callout */}
+      <div className="p-6 sm:p-8 rounded-2xl glow-card text-center max-w-2xl mx-auto border border-[#2B354F]">
+        <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#D4FF00] block mb-2 font-bold">
+          The Core Hypothesis
+        </span>
+        <p className="text-base sm:text-lg font-bold tracking-tight text-[#FFFFFF] leading-snug">
+          &ldquo;{premise.thesisQuestion}&rdquo;
+        </p>
       </div>
     </section>
   );

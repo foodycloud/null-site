@@ -10,43 +10,42 @@ const inter = Inter({
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500"],
   variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://null.wtf"),
-  title: "NULL — NOTHING. UNTIL EVERYTHING.",
+  title: "NULL — Nothing. Until Everything.",
   description:
-    "A memecoin built around a simple idea: nothing becomes something when enough people participate.",
-  keywords: ["NULL", "memecoin", "crypto", "internet culture"],
-  icons: {
-    icon: "/favicon.svg",
-  },
+    "NULL is an internet-native memecoin built around one simple idea: nothing becomes something when enough people participate.",
+  keywords: ["NULL", "memecoin", "crypto", "internet", "community"],
+  authors: [{ name: "NULL" }],
+  creator: "NULL",
   openGraph: {
     type: "website",
     url: "https://null.wtf",
-    title: "NULL — NOTHING. UNTIL EVERYTHING.",
+    title: "NULL — Nothing. Until Everything.",
     description:
-      "A memecoin built around a simple idea: nothing becomes something when enough people participate.",
+      "NULL is an internet-native memecoin built around one simple idea: nothing becomes something when enough people participate.",
     siteName: "NULL",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "NULL — NOTHING. UNTIL EVERYTHING.",
+        alt: "NULL — Nothing. Until Everything.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NULL — NOTHING. UNTIL EVERYTHING.",
+    title: "NULL — Nothing. Until Everything.",
     description:
-      "A memecoin built around a simple idea: nothing becomes something when enough people participate.",
-    images: ["/og-image.svg"],
-    creator: "@null_culture",
+      "NULL is an internet-native memecoin built around one simple idea: nothing becomes something when enough people participate.",
+    images: ["/og-image.png"],
+    creator: "@nullcoin",
   },
   robots: {
     index: true,
@@ -61,7 +60,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable}`}>
-      <body style={{ fontFamily: "var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
+      <body style={{ fontFamily: "var(--font-inter), 'Helvetica Neue', Arial, sans-serif" }}>
         {children}
       </body>
     </html>
