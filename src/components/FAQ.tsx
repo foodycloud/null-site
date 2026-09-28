@@ -50,8 +50,8 @@ export default function FAQ() {
                   </span>
                 </div>
 
-                <span className="font-mono-tech text-xs text-[#858580] shrink-0 pt-0.5">
-                  {isOpen ? "[-]" : "[+]"}
+                <span className="font-mono-tech text-base text-[#858580] shrink-0 pt-0.5 select-none font-light">
+                  {isOpen ? "−" : "+"}
                 </span>
               </button>
 
